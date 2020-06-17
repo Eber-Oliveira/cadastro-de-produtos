@@ -19,4 +19,13 @@ public class ProdutosBean {
 	public List<ProdutoBean> getProdutos() {
 		return produtos;
 	}
+	
+	public void adicionar (ProdutoBean produto) {
+		produtos.add(produto);
+		
+	}
+	
+	public void remover(ProdutoBean produto) {
+		produtos.remove(produto);
+	}
 }
