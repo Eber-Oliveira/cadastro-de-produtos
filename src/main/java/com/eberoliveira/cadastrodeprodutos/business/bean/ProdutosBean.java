@@ -10,9 +10,11 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean (name = "produtos")
 public class ProdutosBean {
 	private List<ProdutoBean> produtos;
+	private ProdutoBean produtoSelecionado; 
 	
 	public ProdutosBean(){
 		produtos = new ArrayList<>();
+		produtoSelecionado = new ProdutoBean();
 		
 	}
 
@@ -22,10 +24,21 @@ public class ProdutosBean {
 	
 	public void adicionar (ProdutoBean produto) {
 		produtos.add(produto);
-		
+			
 	}
 	
 	public void remover(ProdutoBean produto) {
 		produtos.remove(produto);
 	}
+	
+	public String selecionar(ProdutoBean produto) {
+		produtoSelecionado = produto;
+		
+		return "detalhe";
+	}
+
+	public ProdutoBean getProdutoSelecionado() {
+		return produtoSelecionado;
+	}
 }
+
